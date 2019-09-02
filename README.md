@@ -1,4 +1,4 @@
-# Bashrc-Customisations
+# Bashrc Customisations
 Some customisations that I always add to my personal `~/.bashrc`.
 
 ## Usage
