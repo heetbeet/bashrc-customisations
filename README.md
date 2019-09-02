@@ -5,5 +5,5 @@ Some customisations that I always add to my personal `~/.bashrc`.
 
     cd ~/.
     git clone git@github.com:heetbeet/bashrc-customisations.git .bashrc-customisations
-    echo '. ~/.bashrc-customisations/customisations' >> ~/.bashrc
+    echo '. ~/.bashrc-customisations/customisations.sh' >> ~/.bashrc
     source ~/.bashrc
