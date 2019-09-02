@@ -1,7 +1,7 @@
-# bashrc-customisations
+# Bashrc-Customisations
 Some customisations that I always add to my personal `~/.bashrc`.
 
-# Usage
+## Usage
 
     cd ~/.
     git clone git@github.com:heetbeet/bashrc-customisations.git .bashrc-customisations
