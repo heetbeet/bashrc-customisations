@@ -2,7 +2,6 @@
 # Usual Path exports
 #*******************************************************
 export PATH=~/anaconda3/bin:$PATH
-export PATH=~/Applications/cmake-3.14.6-Linux-x86_64/bin:$PATH
 
 #*******************************************************
 # Added functionalities
