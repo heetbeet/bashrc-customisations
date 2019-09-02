@@ -1,11 +1,18 @@
+#*******************************************************
+# Usual Path exports
+#*******************************************************
 export PATH=~/anaconda3/bin:$PATH
 export PATH=~/Applications/cmake-3.14.6-Linux-x86_64/bin:$PATH
 
+#*******************************************************
+# Added functionalities
+#*******************************************************
 alias wifirestart="nmcli radio wifi off; sleep 7; nmcli radio wifi on"
 
-
+#*******************************************************
+# My custom git commands
+#*******************************************************
 alias git-myreset="git stash save --keep-index --include-untracked; git stash drop"
-
 
 function git-mystash() {
     git stash push --include-untracked -m "mystash_$1"
