@@ -1,7 +1,15 @@
 #*******************************************************
 # Usual Path exports
 #*******************************************************
+export PATH=~/.bashrc-customisations:$PATH
 export PATH=~/anaconda3/bin:$PATH
+export PATH=~/Applications/jspaint:$PATH
+
+#*******************************************************
+#Custom clang
+#*******************************************************
+export PATH=~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
+export LD_LIBRARY_PATH=~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/lib:$LD_LIBRARY_PATH
 
 #*******************************************************
 # Added functionalities

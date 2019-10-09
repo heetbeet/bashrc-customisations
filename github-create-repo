@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+# https://gist.github.com/robwierzbowski/5430952/
+# Create and push to a new github repo from the command line. 
+
+import subprocess
+
+reponame = input('New repo name: ')
+description = input('New repo description: ')
+
+gituser = input('Github username: ')
+password = getpass('Git password: ')
+
+print("Here we go...")
+
+# Curl some json to the github API oh damn we so fancy
+cmd = ['curl',
+       '-u',  f'{gituser}:{password}', 
+       'https://api.github.com/user/repos',
+       '-d', f'{{"name":"{reponame}", "description": "{description}", "private": true, "has_issues": true, "has_downloads": true, "has_wiki": false}}'
+      ]
+subprocess.call(cmd)
+
+# Set the freshly created repo to the origin and push
+# You'll need to have added your public key to your github account
+subprocess.call(['touch', 'README.md'])
+subprocess.call(['git', 'init'])
+subprocess.call(['git', 'add', 'README.md'])
+subprocess.call(['git', 'commit', '-m', 'first commit'])
+subprocess.call(['git', 'remote', 'add', 'origin', f'git@github.com:{gituser}/{reponame}.git'])
+subprocess.call(['git', 'remote', 'set-url', 'origin', f'git@github.com:{gituser}/{reponame}.git'])
+subprocess.call(['git', 'push', '--set-upstream', 'origin', 'master'])
