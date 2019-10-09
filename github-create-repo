@@ -4,12 +4,13 @@
 # Create and push to a new github repo from the command line. 
 
 import subprocess
+import getpass
 
 reponame = input('New repo name: ')
 description = input('New repo description: ')
 
 gituser = input('Github username: ')
-password = getpass('Git password: ')
+password = getpass.getpass('Git password: ')
 
 print("Here we go...")
 
