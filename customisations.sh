@@ -1,18 +1,20 @@
 #*******************************************************
 # Path exports
 #*******************************************************
-export PATH=~/.bashrc-customisations:$PATH
-export PATH=~/anaconda3/bin:$PATH
+function add-PATH(){
+	export PATH="$1:$PATH"
+}
 
-export PATH=~/Applications/jspaint:$PATH
-
-export PATH=~/Applications/julia-1.2.0/bin:$PATH
-export PATH=~/.julia/bin:$PATH
+add-PATH ~/.bashrc-customisations
+add-PATH ~/anaconda3/bin
+add-PATH ~/Applications/jspaint
+add-PATH ~/Applications/julia-1.2.0/bin
+add-PATH ~/.julia/bin
 
 #*******************************************************
 #Custom clang
 #*******************************************************
-export PATH=~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
+add-PATH ~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin
 export LD_LIBRARY_PATH=~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/lib:$LD_LIBRARY_PATH
 
 #*******************************************************
