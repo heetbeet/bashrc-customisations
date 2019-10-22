@@ -1,9 +1,13 @@
 #*******************************************************
-# Usual Path exports
+# Path exports
 #*******************************************************
 export PATH=~/.bashrc-customisations:$PATH
 export PATH=~/anaconda3/bin:$PATH
+
 export PATH=~/Applications/jspaint:$PATH
+
+export PATH=~/Applications/julia-1.2.0/bin:$PATH
+export PATH=~/.julia/bin:$PATH
 
 #*******************************************************
 #Custom clang
