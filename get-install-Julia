@@ -8,7 +8,7 @@ page = request.urlopen(url).read().decode('utf-8')
 
 regex = re.compile(r'.*(https\:.*\/julia-.*-linux-x86_64.tar.gz).*')
 dlurl = regex.findall(page)[0]
-fname = url.strip('/').split('/')[-1]
+fname = dlurl.strip('/').split('/')[-1]
 
 subprocess.call(f'wget {url} -O ~/Downloads/{fname}',
                 shell=True)
@@ -51,7 +51,6 @@ juliabin = glob.glob(Path('~/Applications/julia-*/bin/julia').expanduser())[0]
 def add_pkg(pkgname):
     subprocess.call(f'''{juliabin} -e 'using Pkg; Pkg.add("{pkgname}")' ''',
                     shell=True)
-
 
 pkglist = [i.strip().strip('"').split('"')[0].strip() for i in pkgdump.split('\n') if i.strip()!='']
 for pkg in pkglist:
