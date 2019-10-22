@@ -4,18 +4,21 @@
 function add-PATH(){
 	export PATH="$1:$PATH"
 }
+function add-LD_LIBRARY_PATH(){
+	export LD_LIBRARY_PATH="$1:$LD_LIBRARY_PATH"
+}
 
 add-PATH ~/.bashrc-customisations
 add-PATH ~/anaconda3/bin
 add-PATH ~/Applications/jspaint
-add-PATH ~/Applications/julia-1.2.0/bin
+add-PATH ~/Applications/julia-*/bin
 add-PATH ~/.julia/bin
 
 #*******************************************************
 #Custom clang
 #*******************************************************
-add-PATH ~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/bin
-export LD_LIBRARY_PATH=~/Applications/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-18.04/lib:$LD_LIBRARY_PATH
+add-PATH ~/Applications/clang*/bin
+add-LD_LIBRARY_PATH ~/Applications/clang*/lib
 
 #*******************************************************
 # Added functionalities
