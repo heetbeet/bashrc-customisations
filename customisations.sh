@@ -27,8 +27,34 @@ add-LD_LIBRARY_PATH ~/Applications/clang*/lib
 #*******************************************************
 alias wifirestart="nmcli radio wifi off; sleep 7; nmcli radio wifi on"
 
-function runsep(){
+function runseperate(){
+	# Name:
+	#       runseperate
+	# 
+	# Description:
+	#       Run a program detatched/seperate from the current terminal
+	#
+	# Manual:
+	#       $ runseperate firefox
 	nohup "$@" > /dev/null 2>&1 &
+}
+
+function copypath(){
+	# Name:
+	#       copypath
+	# 
+	# Description:
+	#       Execute this command from terminal to copy the current path to clipboard.
+	#       You can paste the path in text editors or anyware you want using Ctrl + V.
+	#
+	# Manual:
+	#       $ copypath
+	#       Ctrl + V (anyware you want to paste)
+
+	# pwd   -   Returns the current directory path
+	# awk   -   Captures the output of pwd and trim the new line
+	# xclip -   Copy the output of awk to the clipboard
+	pwd | awk '{printf $0}' | xclip -selection clipboard
 }
 
 #*******************************************************
@@ -44,6 +70,6 @@ function git-named-stash-apply() {
     git stash apply $(git stash list | grep "mystash_$1" | cut -d: -f1)
 }
 
-function git-names-stash-drop() {
+function git-named-stash-drop() {
 	git stash drop $(git stash list | grep "mystash_$1" | cut -d: -f1)
 }

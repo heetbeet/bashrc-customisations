@@ -4,3 +4,4 @@ import re
 
 subprocess.call(f'sudo apt install inkscape', shell=True)
 subprocess.call(f'sudo apt install guake', shell=True)
+subprocess.call(f'sudo apt install xclip', shell=True)
