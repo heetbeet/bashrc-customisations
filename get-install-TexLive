@@ -2,6 +2,8 @@
 import subprocess
 import os
 
+os.chdir(os.path.expanduser('~/Downloads/'))
+
 url = 'https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu'
 
 fname = url.strip('/').split('/')[-1]
