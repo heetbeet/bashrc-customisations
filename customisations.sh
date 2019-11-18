@@ -12,7 +12,9 @@ add-PATH ~/.bashrc-customisations
 add-PATH ~/anaconda3/bin
 add-PATH ~/Applications/jspaint
 add-PATH ~/Applications/julia-*/bin
+add-Path ~/Applications/sublime_text_3
 add-PATH ~/.julia/bin
+
 
 #*******************************************************
 #Custom clang
@@ -24,6 +26,10 @@ add-LD_LIBRARY_PATH ~/Applications/clang*/lib
 # Added functionalities
 #*******************************************************
 alias wifirestart="nmcli radio wifi off; sleep 7; nmcli radio wifi on"
+
+function runsep(){
+	nohup "$@" > /dev/null 2>&1 &
+}
 
 #*******************************************************
 # My custom git commands

@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import subprocess
+import re
+
+subprocess.call(f'sudo apt install inkscape', shell=True)
+subprocess.call(f'sudo apt install guake', shell=True)
