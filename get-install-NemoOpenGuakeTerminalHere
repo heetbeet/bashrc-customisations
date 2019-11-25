@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+import subprocess
+import os
+from path import Path
+
+thisdir = Path(__file__).dirname().abspath()
+
+thisdir.chdir()
+
+print(thisdir)
+
+subprocess.call(['sudo',
+                 'ln',
+                 '-s',
+                 thisdir+'/nemo-open-guake-terminal-here/open-guake-terminal-here.py',
+                 '/usr/share/nemo-python/extensions/open-guake-terminal-here.py'
+                 ])
+
+
+filename = Path('~/.local/share/nemo/nemo').expanduser()
+addline = '(gtk_accel_path “<Actions>/ExtensionsMenuGroup/NemoPython::open_guake_terminal_item” “<Shift>F12”)'
+
+filetxt = ''
+try:
+    filetxt = open(filename).read()
+except FileNotFoundError:
+    pass
+
+if not addline in filetxt:
+    open(filename, 'w').write(filetxt+'\n'+addline)
+
+

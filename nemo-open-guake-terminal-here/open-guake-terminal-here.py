@@ -19,7 +19,7 @@ import urllib
 
 from gi.repository import Nemo, GObject, GConf
 
-class OpenTerminalHereExtension(Nemo.MenuProvider, GObject.GObject):
+class OpenGuakeTerminalHereExtension(Nemo.MenuProvider, GObject.GObject):
     def __init__(self):
         self.client = GConf.Client.get_default()
         
@@ -31,7 +31,7 @@ class OpenTerminalHereExtension(Nemo.MenuProvider, GObject.GObject):
         # commad = "guake -s 0 --rename-tab=" + os.path.basename(filename) + " --show --execute-command=\"cd '" + filename + "'; clear\""
         
         # Select the 0th tab, change the directory and clear the cd command
-        commad = "nohup guake -s 0 --show --execute-command=\"cd '" + filename + "'; clear\" >/dev/null 2>&1 &"
+        commad = "nohup guake -n -s --show --execute-command=\"cd '" + filename + "'; clear\" >/dev/null 2>&1 &"
 
         # Open a new tab, change the directory and clear the cd command
         # commad = "guake -n -s --show --execute-command=\"cd '" + filename + "'; clear\""
@@ -51,15 +51,15 @@ class OpenTerminalHereExtension(Nemo.MenuProvider, GObject.GObject):
         if not file.is_directory() or file.get_uri_scheme() != 'file':
             return
         
-        item = Nemo.MenuItem(name='NemoPython::open_terminal_item',
-                                 label='Open Terminal Here' ,
+        item = Nemo.MenuItem(name='NemoPython::open_guake_terminal_item',
+                                 label='Open Guake Terminal Here' ,
                                  tip='Open Terminal In %s' % file.get_name())
         item.connect('activate', self.menu_activate_cb, file)
         return item,
 
     def get_background_items(self, window, file):
-        item = Nemo.MenuItem(name='NemoPython::open_terminal_item',
-                                 label='Open Terminal Here',
+        item = Nemo.MenuItem(name='NemoPython::open_guake_terminal_item',
+                                 label='Open Guake Terminal Here',
                                  tip='Open Terminal In This Directory')
         item.connect('activate', self.menu_background_activate_cb, file)
         return item,

@@ -2,19 +2,22 @@
 # Path exports
 #*******************************************************
 function add-PATH(){
-	export PATH="$1:$PATH"
+	if [ $# -ne 0 ]; then
+		export PATH="$1:$PATH"
+	fi
 }
 function add-LD_LIBRARY_PATH(){
 	export LD_LIBRARY_PATH="$1:$LD_LIBRARY_PATH"
 }
 
+#later ones overwrite first ones
 add-PATH ~/.bashrc-customisations
-add-PATH ~/anaconda3/bin
 add-PATH ~/Applications/jspaint
 add-PATH ~/Applications/julia-*/bin
-add-Path ~/Applications/sublime_text_3
+add-PATH ~/Applications/sublime_text_3
 add-PATH ~/.julia/bin
-
+add-PATH ~/anaconda3/bin
+add-PATH ~/Applications/cmake-*-Linux-*/bin
 
 #*******************************************************
 #Custom clang
