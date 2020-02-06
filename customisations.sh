@@ -10,7 +10,9 @@ function add-LD_LIBRARY_PATH(){
 	export LD_LIBRARY_PATH="$1:$LD_LIBRARY_PATH"
 }
 
-#later ones overwrite first ones
+#*******************************************************
+#Add to path
+#*******************************************************
 add-PATH ~/.bashrc-customisations
 add-PATH ~/Applications/jspaint
 add-PATH ~/Applications/julia-*/bin
@@ -18,6 +20,7 @@ add-PATH ~/Applications/sublime_text_3
 add-PATH ~/.julia/bin
 add-PATH ~/anaconda3/bin
 add-PATH ~/Applications/cmake-*-Linux-*/bin
+add-Path ~/devel/ace_v3.0_linux86
 
 #*******************************************************
 #Custom clang
@@ -30,12 +33,14 @@ add-LD_LIBRARY_PATH ~/Applications/clang*/lib
 #*******************************************************
 alias wifirestart="nmcli radio wifi off; sleep 7; nmcli radio wifi on"
 
+alias opendefault="xdg-open"
+
 function runseperate(){
 	# Name:
 	#       runseperate
 	# 
 	# Description:
-	#       Run a program detatched/seperate from the current terminal
+	#       Run a program completely detatched/seperate from the current terminal
 	#
 	# Manual:
 	#       $ runseperate firefox
