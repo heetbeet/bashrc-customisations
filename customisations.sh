@@ -20,7 +20,7 @@ add-PATH ~/Applications/sublime_text_3
 add-PATH ~/.julia/bin
 add-PATH ~/anaconda3/bin
 add-PATH ~/Applications/cmake-*-Linux-*/bin
-add-Path ~/devel/ace_v3.0_linux86
+add-PATH ~/devel/ace_v3.0_linux86
 
 #*******************************************************
 #Custom clang
