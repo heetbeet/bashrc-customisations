@@ -16,6 +16,6 @@ subprocess.call(f'sudo apt install xclip', shell=True)
 
 #install all the get-install files
 import os
-files = [i for i in os.listdir() if i.startswith('get-install-')]
+files = [i for i in os.listdir() if i.startswith('get-install-') and not '-defaults' in i]
 for file in files:
 	subprocess.call(file, shell=True)

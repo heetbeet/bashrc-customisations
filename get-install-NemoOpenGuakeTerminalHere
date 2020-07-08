@@ -7,26 +7,24 @@ thisdir = Path(__file__).dirname().abspath()
 
 thisdir.chdir()
 
-print(thisdir)
+print("Adding shortcut to /usr/share/nemo/actions/open-in-guake.nemo_action")
+
+
+Path('~/Downloads/open-in-guake.nemo_action').expanduser().open('w').write(
+"""[Nemo Action]
+Active=true
+Name=Open in Guake
+Comment=Open "%f"
+Exec=nohup guake -n -s --show --execute-command="cd '%F'; clear" >/dev/null 2>&1 &
+Icon-Name=terminal
+Selection=any
+Extensions=any;
+Quote=double
+"""
+)
 
 subprocess.call(['sudo',
-                 'ln',
-                 '-s',
-                 thisdir+'/nemo-open-guake-terminal-here/open-guake-terminal-here.py',
-                 '/usr/share/nemo-python/extensions/open-guake-terminal-here.py'
+                 'cp',
+                 Path('~/Downloads/open-in-guake.nemo_action').expanduser(),
+                 '/usr/share/nemo/actions/open-in-guake.nemo_action'
                  ])
-
-
-filename = Path('~/.local/share/nemo/nemo').expanduser()
-addline = '(gtk_accel_path “<Actions>/ExtensionsMenuGroup/NemoPython::open_guake_terminal_item” “<Shift>F12”)'
-
-filetxt = ''
-try:
-    filetxt = open(filename).read()
-except FileNotFoundError:
-    pass
-
-if not addline in filetxt:
-    open(filename, 'w').write(filetxt+'\n'+addline)
-
-

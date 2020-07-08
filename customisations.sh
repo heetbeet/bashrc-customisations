@@ -14,19 +14,9 @@ function add-LD_LIBRARY_PATH(){
 #Add to path
 #*******************************************************
 add-PATH ~/.bashrc-customisations
-add-PATH ~/Applications/jspaint
-add-PATH ~/Applications/julia-*/bin
-add-PATH ~/Applications/sublime_text_3
 add-PATH ~/.julia/bin
-add-PATH ~/anaconda3/bin
-add-PATH ~/Applications/cmake-*-Linux-*/bin
-add-PATH ~/devel/ace_v3.0_linux86
+#add-PATH ~/Applications/jre1.8.0_251/bin
 
-#*******************************************************
-#Custom clang
-#*******************************************************
-add-PATH ~/Applications/clang*/bin
-add-LD_LIBRARY_PATH ~/Applications/clang*/lib
 
 #*******************************************************
 # Added functionalities
